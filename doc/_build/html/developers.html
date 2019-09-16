@@ -1,0 +1,220 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Developers &#8212; py3exiv2 0.3.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tutorial" href="tutorial.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="developers">
+<h1>Developers<a class="headerlink" href="#developers" title="Permalink to this headline">¶</a></h1>
+<p>If you are a developer and use py3exiv2 in your project, you will find here
+useful information.</p>
+<div class="section" id="getting-the-code">
+<h2>Getting the code<a class="headerlink" href="#getting-the-code" title="Permalink to this headline">¶</a></h2>
+<p>py3exiv2’s source code is versioned with
+<a class="reference external" href="http://bazaar.canonical.com/">bazaar</a>, and the main development focus (sometimes referred to as <em>trunk</em>), is hosted on <a class="reference external" href="https://code.launchpad.net/py3exiv2">Launchpad</a>.</p>
+<p>To get a working copy of the latest revision of the development branch, just
+issue the following command in a terminal:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bzr</span> <span class="n">branch</span> <span class="n">lp</span><span class="p">:</span><span class="n">py3exiv2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>To use py3exiv2:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://python.org/download/">Python</a> ≥ 3.2</li>
+<li><a class="reference external" href="http://www.boost.org/libs/python/doc/">boost.python</a> ≥ 1.46</li>
+<li><a class="reference external" href="http://exiv2.org/">libexiv2</a> ≥ 0.20</li>
+</ul>
+<p>To build py3exiv2:</p>
+<ul class="simple">
+<li><cite>python-all-dev</cite> (≥ 3.2)</li>
+<li><cite>libexiv2-dev</cite> (≥ 0.20)</li>
+<li><cite>libboost-python-dev</cite> (≥ 1.45)</li>
+<li><cite>g++</cite></li>
+</ul>
+<p>Some unit tests have a dependency on
+<a class="reference external" href="http://pytz.sourceforge.net/">python-tz</a>.
+This dependency is optional: the corresponding tests will be skipped if it is
+not present on the system.</p>
+<p>Additionally, if you want to cross-compile py3exiv2 for Windows and generate a
+Windows installer, you will need the following dependencies:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.mingw.org/">MinGW</a></li>
+<li><a class="reference external" href="http://7-zip.org/">7-Zip</a></li>
+<li><a class="reference external" href="http://nsis.sourceforge.net/">NSIS</a></li>
+</ul>
+</div>
+<div class="section" id="building-and-installing">
+<h2>Building and installing<a class="headerlink" href="#building-and-installing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<p>Open a terminal into the top-level directory (where is the file <em>configure.py</em>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python3 configure.py
+</pre></div>
+</div>
+<p>The configure script try to find the exact name of <cite>libboost_python3</cite> wich is depending on your environment. If it can’t find the lib, give it the full path of this lib with the option <em>–libboost</em>. Example on Debian with Python-3.4:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python3 configure.py --libboost=/usr/lib/x86_64-linux-gnu/libboost_python-py34.so
+</pre></div>
+</div>
+<p>Build the lib:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./build.sh
+</pre></div>
+</div>
+<p>The result of the build process is a shared library, <code class="docutils literal"><span class="pre">libexiv2python.so</span></code>, in the build directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ls build/
+$ exiv2wrapper.os  exiv2wrapper_python.os  libexiv2python.so
+</pre></div>
+</div>
+<p>And, if no error, install all the files:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./build.sh -i
+</pre></div>
+</div>
+<p>You will most likely need administrative privileges to the last step.</p>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>The present documentation is generated using
+<a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> from reStructuredText sources found in the
+doc/ directory. Invoke <code class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></code> to (re)build the HTML documentation.</p>
+<p>The index of the documentation will then be found under doc/_build/html/index.html.</p>
+</div>
+<div class="section" id="unit-tests">
+<h2>Unit tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h2>
+<p>py3exiv2’s source comes with a battery of unit tests, in the test/ directory.
+To run them, invoke <code class="docutils literal"><span class="pre">python3</span> <span class="pre">TestsRunner.py</span></code>.</p>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>py3exiv2 is Free Software, meaning that you are encouraged to use it, modify it
+to suit your needs, contribute back improvements, and redistribute it.</p>
+<p><a class="reference external" href="https://bugs.launchpad.net/py3exiv2">Bugs</a> are tracked on Launchpad.
+There is a team called
+<a class="reference external" href="https://launchpad.net/~py3exiv2-team">py3exiv2-developers</a> open to anyone
+interested in following development on py3exiv2. Don’t hesitate to subscribe to
+the team (you don’t need to actually contribute!) and to the associated mailing
+list.</p>
+<p>There are several ways in which you can contribute to improve py3exiv2:</p>
+<ul class="simple">
+<li>Use it;</li>
+<li>Give your feedback and discuss issues and feature requests on the
+mailing list;</li>
+<li>Report bugs, write patches;</li>
+<li>Package it for your favorite distribution/OS.</li>
+</ul>
+<p>When reporting a bug, don’t forget to include the following information in the
+report:</p>
+<ul class="simple">
+<li>version of py3exiv2</li>
+<li>version of libexiv2 it was compiled against</li>
+<li>a minimal script that reliably reproduces the issue</li>
+<li>a sample image file with which the bug can reliably be reproduced</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Developers</a><ul>
+<li><a class="reference internal" href="#getting-the-code">Getting the code</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#building-and-installing">Building and installing</a><ul>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#unit-tests">Unit tests</a></li>
+<li><a class="reference internal" href="#contributing">Contributing</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tutorial.html"
+                        title="previous chapter">Tutorial</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/developers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2018 Vincent Vande Vyvre.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

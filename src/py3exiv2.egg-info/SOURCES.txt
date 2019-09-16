@@ -1,0 +1,17 @@
+README
+setup.py
+src/exiv2wrapper.cpp
+src/exiv2wrapper_python.cpp
+src/py3exiv2.egg-info/PKG-INFO
+src/py3exiv2.egg-info/SOURCES.txt
+src/py3exiv2.egg-info/dependency_links.txt
+src/py3exiv2.egg-info/top_level.txt
+src/pyexiv2/__init__.py
+src/pyexiv2/exif.py
+src/pyexiv2/iptc.py
+src/pyexiv2/metadata.py
+src/pyexiv2/preview.py
+src/pyexiv2/utils.py
+src/pyexiv2/xmp.py
+test/TestsRunner.py
+test/testutils.py

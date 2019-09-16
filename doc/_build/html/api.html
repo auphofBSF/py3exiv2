@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>API documentation &#8212; py3exiv2 0.3.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Welcome to py3exiv2’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to py3exiv2’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="api-documentation">
+<h1>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pyexiv2">
+<h2>pyexiv2<a class="headerlink" href="#pyexiv2" title="Permalink to this headline">¶</a></h2>
+<p>The top-level module <code class="xref py py-class docutils literal"><span class="pre">pyexiv2</span></code>.</p>
+<p><strong>Attributes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#versioninfo"><span class="std std-ref">version_info</span></a></li>
+<li><a class="reference internal" href="#version"><span class="std std-ref">__version__</span></a></li>
+<li><a class="reference internal" href="#exiv2versioninfo"><span class="std std-ref">exiv2_version_info</span></a></li>
+<li><a class="reference internal" href="#exiv2-version"><span class="std std-ref">__exiv2_version__</span></a></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>Top-level module. All other modules are imported from <code class="xref py py-class docutils literal"><span class="pre">pyexiv2</span></code>.</p>
+<p><strong>Documentation</strong></p>
+<p><strong>Attributes</strong></p>
+<span class="target" id="versioninfo"></span><dl class="attribute">
+<dt id="version_info">
+<code class="descname">version_info</code><a class="headerlink" href="#version_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>A tuple containing the three components of the version number: major, minor, micro.</p>
+</dd></dl>
+
+<span class="target" id="version"></span><dl class="attribute">
+<dt id="__version__">
+<code class="descname">__version__</code><a class="headerlink" href="#__version__" title="Permalink to this definition">¶</a></dt>
+<dd><p>The version of the module as a string (major.minor.micro).</p>
+</dd></dl>
+
+<span class="target" id="exiv2versioninfo"></span><dl class="attribute">
+<dt id="exiv2_version_info">
+<code class="descname">exiv2_version_info</code><a class="headerlink" href="#exiv2_version_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>A tuple containing the three components of the version number of libexiv2: major, minor, micro.</p>
+</dd></dl>
+
+<span class="target" id="exiv2-version"></span><dl class="attribute">
+<dt id="__exiv2_version__">
+<code class="descname">__exiv2_version__</code><a class="headerlink" href="#__exiv2_version__" title="Permalink to this definition">¶</a></dt>
+<dd><p>The version of libexiv2 as a string (major.minor.micro).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="pyexiv2-metadata">
+<h2>pyexiv2.metadata<a class="headerlink" href="#pyexiv2-metadata" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyexiv2.metadata.ImageMetadata">
+<em class="property">class </em><code class="descclassname">pyexiv2.metadata.</code><code class="descname">ImageMetadata</code><a class="headerlink" href="#pyexiv2.metadata.ImageMetadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>Instance Attributes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#buffer"><span class="std std-ref">buffer</span></a></li>
+<li><a class="reference internal" href="#comment"><span class="std std-ref">comment</span></a></li>
+<li><a class="reference internal" href="#dimensions"><span class="std std-ref">dimensions</span></a></li>
+<li><a class="reference internal" href="#exifkeys"><span class="std std-ref">exif_keys</span></a></li>
+<li><a class="reference internal" href="#iptccharset"><span class="std std-ref">iptc_charset</span></a></li>
+<li><a class="reference internal" href="#iptckeys"><span class="std std-ref">iptc_keys</span></a></li>
+<li><a class="reference internal" href="#mimetype"><span class="std std-ref">mime_type</span></a></li>
+<li><a class="reference internal" href="#previews"><span class="std std-ref">previews</span></a></li>
+<li><a class="reference internal" href="#xmpkeys"><span class="std std-ref">xmp_keys</span></a></li>
+</ul>
+<p><strong>Instance Methods</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#copy" title="copy"><code class="xref py py-func docutils literal"><span class="pre">copy(other,</span> <span class="pre">exif=True,</span> <span class="pre">iptc=True,</span> <span class="pre">xmp=True,</span> <span class="pre">comment=True)</span></code></a></li>
+<li><a class="reference internal" href="#__delitem__" title="__delitem__"><code class="xref py py-func docutils literal"><span class="pre">__delitem__(key)</span></code></a></li>
+<li><a class="reference internal" href="#get_aperture" title="get_aperture"><code class="xref py py-func docutils literal"><span class="pre">get_aperture(self)</span></code></a></li>
+<li><a class="reference internal" href="#get_exposure_data" title="get_exposure_data"><code class="xref py py-func docutils literal"><span class="pre">get_exposure_data(self,</span> <span class="pre">float_=False)</span></code></a></li>
+<li><a class="reference internal" href="#get_focal_length" title="get_focal_length"><code class="xref py py-func docutils literal"><span class="pre">get_focal_length(self)</span></code></a></li>
+<li><a class="reference internal" href="#get_iso" title="get_iso"><code class="xref py py-func docutils literal"><span class="pre">get_iso(self)</span></code></a></li>
+<li><a class="reference internal" href="#__getitem__" title="__getitem__"><code class="xref py py-func docutils literal"><span class="pre">__getitem__(key)</span></code></a></li>
+<li><a class="reference internal" href="#get_orientation" title="get_orientation"><code class="xref py py-func docutils literal"><span class="pre">get_orientation(self)</span></code></a></li>
+<li><a class="reference internal" href="#get_rights_data" title="get_rights_data"><code class="xref py py-func docutils literal"><span class="pre">get_rights_data(self)</span></code></a></li>
+<li><a class="reference internal" href="#get_shutter_speed" title="get_shutter_speed"><code class="xref py py-func docutils literal"><span class="pre">get_shutter_speed(self,</span> <span class="pre">float_=False)</span></code></a></li>
+<li><a class="reference internal" href="#read" title="read"><code class="xref py py-func docutils literal"><span class="pre">read()</span></code></a></li>
+<li><a class="reference internal" href="#__setitem__" title="__setitem__"><code class="xref py py-func docutils literal"><span class="pre">__setitem__(key)</span></code></a></li>
+<li><a class="reference internal" href="#write" title="write"><code class="xref py py-func docutils literal"><span class="pre">write(preserve_timestamps=False)</span></code></a></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>The <a class="reference internal" href="#pyexiv2.metadata.ImageMetadata" title="pyexiv2.metadata.ImageMetadata"><code class="xref py py-class docutils literal"><span class="pre">pyexiv2.metadata.ImageMetadata</span></code></a> is a container for all the metadata embedded in an image.</p>
+<p>It provides convenient methods for the manipulation of EXIF, IPTC and XMP metadata embedded in image files such as JPEG and TIFF files, using Python types. It also provides access to the previews embedded in an image.</p>
+<p><strong>Documentation</strong></p>
+<p><strong>Instanciation</strong></p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyexiv2.metadata.</code><code class="descname">ImageMetadata</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span></dt>
+<dd><p>Inherits: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html?highlight=mutablemapping#collections.abc.MutableMapping">MutableMapping</a></p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>filename</em> str(path of an image file)</li>
+</ul>
+</div></blockquote>
+<p>See <a class="reference internal" href="#read" title="read"><code class="xref py py-func docutils literal"><span class="pre">read()</span></code></a></p>
+</dd></dl>
+
+<p><strong>Attributes</strong></p>
+<span class="target" id="buffer"></span><dl class="attribute">
+<dt>
+<code class="descname">buffer</code></dt>
+<dd><p>Return the image data as bytes.  This is useful to reduce disk access, the data can be send to an image library.</p>
+<p>Example with Pillow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyexiv2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">pyexiv2</span><span class="o">.</span><span class="n">ImageMetadata</span><span class="p">(</span><span class="s2">&quot;lena.jpg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">byteio</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">byteio</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="comment"></span><dl class="attribute">
+<dt>
+<code class="descname">comment</code></dt>
+<dd><p>The image comment.</p>
+</dd></dl>
+
+<span class="target" id="dimensions"></span><dl class="attribute">
+<dt>
+<code class="descname">dimensions</code></dt>
+<dd><p>A tuple containing the width and height of the image, expressed in pixels.</p>
+</dd></dl>
+
+<span class="target" id="exifkeys"></span><dl class="attribute">
+<dt id="exif_keys">
+<code class="descname">exif_keys</code><a class="headerlink" href="#exif_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of the keys of the available EXIF tags.</p>
+</dd></dl>
+
+<span class="target" id="iptccharset"></span><dl class="attribute">
+<dt id="iptc_charset">
+<code class="descname">iptc_charset</code><a class="headerlink" href="#iptc_charset" title="Permalink to this definition">¶</a></dt>
+<dd><p>An optional character set the IPTC data is encoded in.</p>
+</dd></dl>
+
+<span class="target" id="iptckeys"></span><dl class="attribute">
+<dt id="iptc_keys">
+<code class="descname">iptc_keys</code><a class="headerlink" href="#iptc_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of the keys of the available IPTC tags.</p>
+</dd></dl>
+
+<span class="target" id="mimetype"></span><dl class="attribute">
+<dt id="mime_type">
+<code class="descname">mime_type</code><a class="headerlink" href="#mime_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>The mime type of the image, as a string.</p>
+</dd></dl>
+
+<span class="target" id="previews"></span><dl class="attribute">
+<dt>
+<code class="descname">previews</code></dt>
+<dd><p>List of the previews available in the image, sorted by increasing size.</p>
+</dd></dl>
+
+<span class="target" id="xmpkeys"></span><dl class="attribute">
+<dt id="xmp_keys">
+<code class="descname">xmp_keys</code><a class="headerlink" href="#xmp_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of the keys of the available XMP tags.</p>
+</dd></dl>
+
+<p><strong>Methods</strong></p>
+<dl class="function">
+<dt id="copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>other</em>, <em>exif=True</em>, <em>iptc=True</em>, <em>xmp=True</em>, <em>comment=True</em><span class="sig-paren">)</span><a class="headerlink" href="#copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the metadata to another image. The metadata in the destination is overridden.
+In particular, if the destination contains e.g. EXIF data and the source doesn’t,
+it will be erased in the destination, unless explicitly omitted.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>other</em> An instance of :class:pyexiv2.metadata.ImageMetadata, the destination metadata to copy to (it must have been read() beforehand)</li>
+<li><em>exif</em> (boolean) – Whether to copy the EXIF metadata</li>
+<li><em>iptc</em> (boolean) – Whether to copy the IPTC metadata</li>
+<li><em>xmp</em> (boolean) – Whether to copy the XMP metadata</li>
+<li><em>comment</em> (boolean) – Whether to copy the image comment</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="__delitem__">
+<code class="descname">__delitem__</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#__delitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a metadata tag for a given key.</p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>key</em> Metadata key in the dotted form <em>familyName.groupName.tagName</em> where <em>familyName</em> may be one of <em>exif</em>, <em>iptc</em> or <em>xmp</em>.</li>
+</ul>
+</div></blockquote>
+<p>Raises KeyError if the tag with the given key doesn’t exist</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="get_aperture">
+<code class="descname">get_aperture</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#get_aperture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the fNumber as float.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="get_exposure_data">
+<code class="descname">get_exposure_data</code><span class="sig-paren">(</span><em>self</em>, <em>float_=False</em><span class="sig-paren">)</span><a class="headerlink" href="#get_exposure_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exposure parameters of the image.</p>
+<p>The values are returned as a dict which contains:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>“iso”</em>: the ISO value</li>
+<li><em>“speed”</em>: the exposure time</li>
+<li><em>“focal”</em>: the focal length</li>
+<li><em>“aperture”</em>: the fNumber</li>
+<li><em>“orientation”</em>: the orientation of the image</li>
+</ul>
+</div></blockquote>
+<p>When a tag is not set, the value will be None.</p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>float_</em> If False, default, the value of the exposure time is returned as rational otherwise a float is returned.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="get_focal_length">
+<code class="descname">get_focal_length</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#get_focal_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the focal length as float.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="get_iso">
+<code class="descname">get_iso</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#get_iso" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ISO value as integer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="__getitem__">
+<code class="descname">__getitem__</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a metadata tag for a given key.</p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>key</em> Metadata key in the dotted form familyName.groupName.tagName where familyName may be one of exif, iptc or xmp.</li>
+</ul>
+</div></blockquote>
+<p>Raises KeyError if the tag doesn’t exist</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="get_orientation">
+<code class="descname">get_orientation</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#get_orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the orientation of the image as integer.</p>
+<p>If the tag is not set, the value 1 is returned.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="get_rights_data">
+<code class="descname">get_rights_data</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#get_rights_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the author and copyright info.</p>
+<p>The values are returned as a dict which contains:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>“creator”</em>: the value of Xmp.dc.creator</li>
+<li><em>“artist”</em>: the value of Exif.Image.Artist</li>
+<li><em>“rights”</em>: the value of Xmp.dc.rights</li>
+<li><em>“copyright”</em>: the value of Exif.Image.Copyright</li>
+<li><em>“marked”</em>: the value of Xmp.xmpRights.Marked</li>
+<li><em>“usage”</em>: the value of Xmp.xmpRights.UsageTerms</li>
+</ul>
+</div></blockquote>
+<p>When a tag is not set, the value will be None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="get_shutter_speed">
+<code class="descname">get_shutter_speed</code><span class="sig-paren">(</span><em>self</em>, <em>float_=False</em><span class="sig-paren">)</span><a class="headerlink" href="#get_shutter_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the exposure time as rational or float or None if the tag is not set.</p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>float_</em> If False, default, the value is returned as rational otherwise a float is returned</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="read">
+<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the metadata embedded in the associated image. It is necessary to call this method once before attempting to access the metadata (an exception will be raised if trying to access metadata before calling this method).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="__setitem__">
+<code class="descname">__setitem__</code><span class="sig-paren">(</span><em>key</em>, <em>tag_or_value</em><span class="sig-paren">)</span><a class="headerlink" href="#__setitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a metadata tag for a given key. If the tag was previously set, it is overwritten. As a handy shortcut, a value may be passed instead of a fully formed tag. The corresponding tag object will be instantiated.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>key</em> Metadata key in the dotted form familyName.groupName.tagName where familyName may be one of exif, iptc or xmp.</li>
+<li><em>tag_or_value</em> (pyexiv2.exif.ExifTag or pyexiv2.iptc.IptcTag or pyexiv2.xmp.XmpTag or any valid value type) – An instance of the corresponding family of metadata tag, or a value</li>
+</ul>
+</div></blockquote>
+<p>Raises KeyError if the tag doesn’t exist</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>preserve_timestamps=False</em><span class="sig-paren">)</span><a class="headerlink" href="#write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the metadata back to the image.</p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>preserve_timestamps</em> (boolean) – Whether to preserve the file’s original timestamps (access time and modification time)</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="pyexiv2-exif">
+<h2>pyexiv2.exif<a class="headerlink" href="#pyexiv2-exif" title="Permalink to this headline">¶</a></h2>
+<p>This module provides the classes <code class="xref py py-class docutils literal"><span class="pre">ExifTag</span></code>, <code class="xref py py-class docutils literal"><span class="pre">ExifValueError</span></code> and <code class="xref py py-class docutils literal"><span class="pre">ExifThumbnail</span></code>.</p>
+<dl class="class">
+<dt id="pyexiv2.exif.ExifTag">
+<em class="property">class </em><code class="descclassname">pyexiv2.exif.</code><code class="descname">ExifTag</code><a class="headerlink" href="#pyexiv2.exif.ExifTag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>Instance Attributes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#description"><span class="std std-ref">description</span></a></li>
+<li><a class="reference internal" href="#humanvalue"><span class="std std-ref">human_value</span></a></li>
+<li><a class="reference internal" href="#key"><span class="std std-ref">key</span></a></li>
+<li><a class="reference internal" href="#label"><span class="std std-ref">label</span></a></li>
+<li><a class="reference internal" href="#name"><span class="std std-ref">name</span></a></li>
+<li><a class="reference internal" href="#rawvalue"><span class="std std-ref">raw_value</span></a></li>
+<li><a class="reference internal" href="#sectiondescription"><span class="std std-ref">section_description</span></a></li>
+<li><a class="reference internal" href="#sectionname"><span class="std std-ref">section_name</span></a></li>
+<li><a class="reference internal" href="#type"><span class="std std-ref">type</span></a></li>
+<li><a class="reference internal" href="#value"><span class="std std-ref">value</span></a></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>The <code class="xref py py-class docutils literal"><span class="pre">ExifTag</span></code> define an EXIF tag.</p>
+<p><strong>Documentation</strong></p>
+<p><strong>Instanciation</strong></p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyexiv2.exif.</code><code class="descname">ExifTag</code><span class="sig-paren">(</span><em>key</em>, <em>value=None</em>, <em>_tag=None</em><span class="sig-paren">)</span></dt>
+<dd><p>An EXIF tag.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>key</em> The key of the tag in the dotted form <em>familyName.groupName.tagName</em> where <em>familyName</em> = <em>exif</em>.</li>
+<li><em>value</em> The value of the tag.</li>
+</ul>
+</div></blockquote>
+<p>Here is a correspondance table between the EXIF types and the possible python types the value of a tag may take:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Ascii: datetime.datetime(), datetime.date(), str()</li>
+<li>Byte, SByte: str()</li>
+<li>Comment: str()</li>
+<li>Long, SLong: [list of] int</li>
+<li>Short, SShort: [list of] int</li>
+<li>Rational, SRational: [list of] fractions.Fraction</li>
+<li>Undefined: str()</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<p><strong>Attributes</strong></p>
+<span class="target" id="description"></span><dl class="attribute">
+<dt>
+<code class="descname">description</code></dt>
+<dd><p>The description of the tag.</p>
+</dd></dl>
+
+<span class="target" id="humanvalue"></span><dl class="attribute">
+<dt id="human_value">
+<code class="descname">human_value</code><a class="headerlink" href="#human_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>A (read-only) human-readable representation of the value of the tag.</p>
+</dd></dl>
+
+<span class="target" id="key"></span><dl class="attribute">
+<dt>
+<code class="descname">key</code></dt>
+<dd><p>The key of the tag in the dotted form familyName.groupName.tagName where familyName = exif.</p>
+</dd></dl>
+
+<span class="target" id="label"></span><dl class="attribute">
+<dt>
+<code class="descname">label</code></dt>
+<dd><p>The title (label) of the tag.</p>
+</dd></dl>
+
+<span class="target" id="name"></span><dl class="attribute">
+<dt>
+<code class="descname">name</code></dt>
+<dd><p>The name of the tag (this is also the third part of the key).</p>
+</dd></dl>
+
+<span class="target" id="rawvalue"></span><dl class="attribute">
+<dt id="raw_value">
+<code class="descname">raw_value</code><a class="headerlink" href="#raw_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The raw value of the tag as a string.</p>
+</dd></dl>
+
+<span class="target" id="sectiondescription"></span><dl class="attribute">
+<dt id="section_description">
+<code class="descname">section_description</code><a class="headerlink" href="#section_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>The description of the tag’s section.</p>
+</dd></dl>
+
+<span class="target" id="sectionname"></span><dl class="attribute">
+<dt id="section_name">
+<code class="descname">section_name</code><a class="headerlink" href="#section_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tag’s section.</p>
+</dd></dl>
+
+<span class="target" id="type"></span><dl class="attribute">
+<dt>
+<code class="descname">type</code></dt>
+<dd><p>The EXIF type of the tag (one of Ascii, Byte, SByte, Comment, Short, SShort, Long, SLong, Rational, SRational, Undefined).</p>
+</dd></dl>
+
+<span class="target" id="value"></span><dl class="attribute">
+<dt>
+<code class="descname">value</code></dt>
+<dd><p>The value of the tag as a python object.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyexiv2.exif.ExifValueError">
+<em class="property">class </em><code class="descclassname">pyexiv2.exif.</code><code class="descname">ExifValueError</code><span class="sig-paren">(</span><em>value</em>, <em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.exif.ExifValueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when failing to parse the value of an EXIF tag.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>value</em> The value that fails to be parsed</li>
+<li><em>type</em>  The EXIF type of the tag</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyexiv2.exif.ExifThumbnail">
+<em class="property">class </em><code class="descclassname">pyexiv2.exif.</code><code class="descname">ExifThumbnail</code><a class="headerlink" href="#pyexiv2.exif.ExifThumbnail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>Instance Attributes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#extension"><span class="std std-ref">extension</span></a></li>
+<li><a class="reference internal" href="#mimetyp"><span class="std std-ref">mime_type</span></a></li>
+<li><a class="reference internal" href="#data"><span class="std std-ref">data</span></a></li>
+</ul>
+<p><strong>Instance Method</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#erase" title="erase"><code class="xref py py-func docutils literal"><span class="pre">erase()</span></code></a></li>
+<li><a class="reference internal" href="#set_from_file" title="set_from_file"><code class="xref py py-func docutils literal"><span class="pre">set_from_file(path)</span></code></a></li>
+<li><a class="reference internal" href="#write_to_file" title="write_to_file"><code class="xref py py-func docutils literal"><span class="pre">write_to_file(path)</span></code></a></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>A thumbnail image optionally embedded in the IFD1 segment of the EXIF data.</p>
+<p>The image is either a TIFF or a JPEG image.</p>
+<p><strong>Documentation</strong></p>
+<p><strong>Instanciation</strong></p>
+<p>class pyexiv2.exif.ExifThumbnail(_metadata)</p>
+<blockquote>
+<div><p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>_metadata</em> The <code class="xref py py-class docutils literal"><span class="pre">ImageMetadata</span></code> instance</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Attributes</strong></p>
+<span class="target" id="extension"></span><dl class="attribute">
+<dt>
+<code class="descname">extension</code></dt>
+<dd><p>The file extension of the preview image with a leading dot (e.g. .jpg).</p>
+</dd></dl>
+
+<span class="target" id="mimetyp"></span><dl class="attribute">
+<dt>
+<code class="descname">mime_type</code></dt>
+<dd><p>The mime type of the preview image (e.g. image/jpeg).</p>
+</dd></dl>
+
+<span class="target" id="data"></span><dl class="data">
+<dt>
+<code class="descname">data</code></dt>
+<dd><p>The preview data as a Python list. The data can be send to an image library.</p>
+<p>Example with Pillow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyexiv2</span> <span class="k">import</span> <span class="n">ImageMetadata</span><span class="p">,</span> <span class="n">exif</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">ImageMetadata</span><span class="p">(</span><span class="s2">&quot;lena.jpg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">thumb</span> <span class="o">=</span> <span class="n">exif</span><span class="o">.</span><span class="n">ExifThumbnail</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">byteio</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="n">thumb</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">byteio</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p><strong>Methods</strong></p>
+<dl class="function">
+<dt id="erase">
+<code class="descname">erase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#erase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the thumbnail from the EXIF data. Removes all Exif.Thumbnail.*, i.e. Exif IFD1 tags.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="set_from_file">
+<code class="descname">set_from_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#set_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the EXIF thumbnail to the JPEG image path. This sets only the Compression, JPEGInterchangeFormat and JPEGInterchangeFormatLength tags, which is not all the thumbnail EXIF information mandatory according to the EXIF standard (but it is enough to work with the thumbnail).</p>
+<dl class="docutils">
+<dt>Argument:</dt>
+<dd><ul class="first last simple">
+<li><em>path</em> str(Path to a JPEG file).</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="write_to_file">
+<code class="descname">write_to_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#write_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the thumbnail image to a file on disk. The file extension will be automatically appended to the path.</p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>path</em> str(Path to write the thumbnail to) - without an extension.</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="pyexiv2-iptc">
+<h2>pyexiv2.iptc<a class="headerlink" href="#pyexiv2-iptc" title="Permalink to this headline">¶</a></h2>
+<p>This module provides the classes <code class="xref py py-class docutils literal"><span class="pre">IptcTag</span></code> and <code class="xref py py-class docutils literal"><span class="pre">IptcValueError</span></code>.</p>
+<dl class="class">
+<dt id="pyexiv2.iptc.IptcTag">
+<em class="property">class </em><code class="descclassname">pyexiv2.iptc.</code><code class="descname">IptcTag</code><a class="headerlink" href="#pyexiv2.iptc.IptcTag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>Instance Attributes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#descript"><span class="std std-ref">description</span></a></li>
+<li><a class="reference internal" href="#key1"><span class="std std-ref">key</span></a></li>
+<li><a class="reference internal" href="#name1"><span class="std std-ref">name</span></a></li>
+<li><a class="reference internal" href="#photoshopname"><span class="std std-ref">photoshop_name</span></a></li>
+<li><a class="reference internal" href="#rawvalue1"><span class="std std-ref">raw_value</span></a></li>
+<li><a class="reference internal" href="#recorddescription"><span class="std std-ref">record_description</span></a></li>
+<li><a class="reference internal" href="#recordname"><span class="std std-ref">record_name</span></a></li>
+<li><a class="reference internal" href="#repeatable"><span class="std std-ref">repeatable</span></a></li>
+<li><a class="reference internal" href="#title"><span class="std std-ref">title</span></a></li>
+<li><a class="reference internal" href="#type1"><span class="std std-ref">type</span></a></li>
+<li><a class="reference internal" href="#value1"><span class="std std-ref">value</span></a></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>The <code class="xref py py-class docutils literal"><span class="pre">IptcTag</span></code> define an IPTC tag.</p>
+<p><strong>Documentation</strong></p>
+<p><strong>Instanciation</strong></p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyexiv2.iptc.</code><code class="descname">IptcTag</code><span class="sig-paren">(</span><em>key</em>, <em>value=None</em>, <em>_tag=None</em><span class="sig-paren">)</span></dt>
+<dd><p>An IPTC tag.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>key</em> The key of the tag in the dotted form <em>familyName.groupName.tagName</em> where <em>familyName</em> = <em>iptc</em>.</li>
+<li><em>value</em> The value of the tag.</li>
+</ul>
+</div></blockquote>
+<p>This tag can have several values (tags that have the <em>repeatable</em> property).</p>
+<p>Here is a correspondance table between the IPTC types and the possible python types the value of a tag may take:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Short: int</li>
+<li>String: string</li>
+<li>Date: <code class="xref py py-class docutils literal"><span class="pre">datetime.date</span></code></li>
+<li>Time: <code class="xref py py-class docutils literal"><span class="pre">datetime.time</span></code></li>
+<li>Undefined: string</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<p><strong>Attributes</strong></p>
+<span class="target" id="descript"></span><dl class="attribute">
+<dt>
+<code class="descname">description</code></dt>
+<dd><p>The description of the tag.</p>
+</dd></dl>
+
+<span class="target" id="key1"></span><dl class="attribute">
+<dt>
+<code class="descname">key</code></dt>
+<dd><p>The key of the tag in the dotted form familyName.groupName.tagName where familyName = iptc.</p>
+</dd></dl>
+
+<span class="target" id="name1"></span><dl class="attribute">
+<dt>
+<code class="descname">name</code></dt>
+<dd><p>The name of the tag (this is also the third part of the key).</p>
+</dd></dl>
+
+<span class="target" id="photoshopname"></span><dl class="attribute">
+<dt id="photoshop_name">
+<code class="descname">photoshop_name</code><a class="headerlink" href="#photoshop_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Photoshop name of the tag</p>
+</dd></dl>
+
+<span class="target" id="rawvalue1"></span><dl class="attribute">
+<dt>
+<code class="descname">raw_value</code></dt>
+<dd><p>The raw values of the tag as a list of strings.</p>
+</dd></dl>
+
+<span class="target" id="recorddescription"></span><dl class="attribute">
+<dt id="record_description">
+<code class="descname">record_description</code><a class="headerlink" href="#record_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>The description of the tag’s record.</p>
+</dd></dl>
+
+<span class="target" id="recordname"></span><dl class="attribute">
+<dt id="record_name">
+<code class="descname">record_name</code><a class="headerlink" href="#record_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the tag’s record.</p>
+</dd></dl>
+
+<span class="target" id="repeatable"></span><dl class="attribute">
+<dt>
+<code class="descname">repeatable</code></dt>
+<dd><p>Whether the tag is repeatable (accepts several values).</p>
+</dd></dl>
+
+<span class="target" id="title"></span><dl class="attribute">
+<dt>
+<code class="descname">title</code></dt>
+<dd><p>The title (label) of the tag.</p>
+</dd></dl>
+
+<span class="target" id="type1"></span><dl class="attribute">
+<dt>
+<code class="descname">type</code></dt>
+<dd><p>The IPTC type of the tag (one of Short, String, Date, Time, Undefined).</p>
+</dd></dl>
+
+<span class="target" id="value1"></span><dl class="attribute">
+<dt>
+<code class="descname">value</code></dt>
+<dd><p>The values of the tag as a list of python objects.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyexiv2.iptc.IptcValueError">
+<em class="property">class </em><code class="descclassname">pyexiv2.iptc.</code><code class="descname">IptcValueError</code><span class="sig-paren">(</span><em>ValueError</em><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.iptc.IptcValueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when failing to parse the value of an IPTC tag.</p>
+</dd></dl>
+
+<p><strong>Attributes</strong></p>
+<dl class="attribute">
+<dt>
+<code class="descname">value</code></dt>
+<dd><p>The value that fails to be parsed</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">type</code></dt>
+<dd><p>The IPTC type of the tag</p>
+</dd></dl>
+
+</div>
+<div class="section" id="pyexiv2-xmp">
+<h2>pyexiv2.xmp<a class="headerlink" href="#pyexiv2-xmp" title="Permalink to this headline">¶</a></h2>
+<p>This module provides the classes <code class="xref py py-class docutils literal"><span class="pre">XmpTag</span></code> and <code class="xref py py-class docutils literal"><span class="pre">XmpValueError</span></code> and the following five functions to handle the XMP parser and name spaces.</p>
+<dl class="function">
+<dt id="pyexiv2.xmp.initialiseXmpParser">
+<code class="descclassname">pyexiv2.xmp.</code><code class="descname">initialiseXmpParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.initialiseXmpParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise the xmp parser.</p>
+<p>Calling this method is usually not needed, as encode() and decode() will
+initialize the XMP Toolkit if necessary.</p>
+<p>This function itself still is not thread-safe and needs to be
+called in a thread-safe manner (e.g., on program startup).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyexiv2.xmp.closeXmpParser">
+<code class="descclassname">pyexiv2.xmp.</code><code class="descname">closeXmpParser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.closeXmpParser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the xmp parser.</p>
+<p>Terminate the XMP Toolkit and unregister custom namespaces.</p>
+<p>Call this method when the XmpParser is no longer needed to allow the XMP
+Toolkit to cleanly shutdown.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyexiv2.xmp.register_namespace">
+<code class="descclassname">pyexiv2.xmp.</code><code class="descname">register_namespace</code><span class="sig-paren">(</span><em>name</em>, <em>prefix</em><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.register_namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register a custom XMP namespace.</p>
+<p>Overriding the prefix of a known or previously registered namespace is not allowed.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>name</em> str() The name of the custom namespace (ending with a /), typically a URL (e.g. <a class="reference external" href="http://purl.org/dc/elements/1.1/">http://purl.org/dc/elements/1.1/</a>)</li>
+<li><em>prefix</em> str() The prefix for the custom namespace (keys in this namespace will be in the form Xmp.{prefix}.{something})</li>
+</ul>
+</div></blockquote>
+<p>Raises:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>ValueError</em> – if the name doesn’t end with a /</li>
+<li><em>KeyError</em> – if a namespace already exist with this prefix</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyexiv2.xmp.unregister_namespace">
+<code class="descclassname">pyexiv2.xmp.</code><code class="descname">unregister_namespace</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.unregister_namespace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister a custom XMP namespace.</p>
+<p>A custom namespace is identified by its name, not by its prefix.</p>
+<p>Attempting to unregister an unknown namespace raises an error, as does attempting to unregister a builtin namespace.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>name</em> str() The name of the custom namespace (ending with a /), typically a URL (e.g. <a class="reference external" href="http://purl.org/dc/elements/1.1/">http://purl.org/dc/elements/1.1/</a>)</li>
+</ul>
+</div></blockquote>
+<p>Raises:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>ValueError</em> – if the name doesn’t end with a /</li>
+<li><em>KeyError</em> – if the namespace is unknown or a builtin namespace</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyexiv2.xmp.unregister_namespaces">
+<code class="descclassname">pyexiv2.xmp.</code><code class="descname">unregister_namespaces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.unregister_namespaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unregister all custom XMP namespaces.</p>
+<p>Builtin namespaces are not unregistered.</p>
+<p>This function always succeeds.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyexiv2.xmp.XmpTag">
+<em class="property">class </em><code class="descclassname">pyexiv2.xmp.</code><code class="descname">XmpTag</code><a class="headerlink" href="#pyexiv2.xmp.XmpTag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>Instance Attributes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#description2"><span class="std std-ref">description</span></a></li>
+<li><a class="reference internal" href="#key2"><span class="std std-ref">key</span></a></li>
+<li><a class="reference internal" href="#name2"><span class="std std-ref">name</span></a></li>
+<li><a class="reference internal" href="#raw-value2"><span class="std std-ref">raw_value</span></a></li>
+<li><a class="reference internal" href="#title2"><span class="std std-ref">title</span></a></li>
+<li><a class="reference internal" href="#type2"><span class="std std-ref">type</span></a></li>
+<li><a class="reference internal" href="#value2"><span class="std std-ref">value</span></a></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>The <code class="xref py py-class docutils literal"><span class="pre">XmpTag</span></code> define an XMP tag.</p>
+<p><strong>Documentation</strong></p>
+<p><strong>Instanciation</strong></p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyexiv2.xmp.</code><code class="descname">XmpTag</code><span class="sig-paren">(</span><em>key</em>, <em>value=None</em>, <em>_tag=None</em><span class="sig-paren">)</span></dt>
+<dd><p>An XMP tag.</p>
+<p>Arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>key</em> The key of the tag in the dotted form <em>familyName.groupName.tagName</em> where <em>familyName</em> = <em>xmp</em>.</li>
+<li><em>value</em> The value of the tag.</li>
+</ul>
+</div></blockquote>
+<p>Here is a correspondance table between the XMP types and the possible python types the value of a tag may take:</p>
+<blockquote>
+<div><ul class="simple">
+<li>alt, bag, seq: list of the contained simple type</li>
+<li>lang alt: dict of (language-code: value)</li>
+<li>Boolean: boolean</li>
+<li>Colorant: <em>[not implemented yet]</em></li>
+<li>Date: <code class="xref py py-class docutils literal"><span class="pre">datetime.date</span></code>, <code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></li>
+<li>Dimensions: <em>[not implemented yet]</em></li>
+<li>Font: <em>[not implemented yet]</em></li>
+<li>GPSCoordinate: <code class="xref py py-class docutils literal"><span class="pre">pyexiv2.utils.GPSCoordinate</span></code></li>
+<li>Integer: int</li>
+<li>Locale: <em>[not implemented yet]</em></li>
+<li>MIMEType: 2-tuple of strings</li>
+<li>Rational: <code class="xref py py-class docutils literal"><span class="pre">fractions.Fraction</span></code></li>
+<li>Real: <em>[not implemented yet]</em></li>
+<li>AgentName, ProperName, Text: unicode string</li>
+<li>Thumbnail: <em>[not implemented yet]</em></li>
+<li>URI, URL: string</li>
+<li>XPath: <em>[not implemented yet]</em></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<p><strong>Attributes</strong></p>
+<span class="target" id="description2"></span><dl class="attribute">
+<dt>
+<code class="descname">description</code></dt>
+<dd><p>The description of the tag.</p>
+</dd></dl>
+
+<span class="target" id="key2"></span><dl class="attribute">
+<dt>
+<code class="descname">key</code></dt>
+<dd><p>The key of the tag in the dotted form familyName.groupName.tagName where familyName = xmp.</p>
+</dd></dl>
+
+<span class="target" id="name2"></span><dl class="attribute">
+<dt>
+<code class="descname">name</code></dt>
+<dd><p>The name of the tag (this is also the third part of the key).</p>
+</dd></dl>
+
+<span class="target" id="raw-value2"></span><dl class="attribute">
+<dt>
+<code class="descname">raw_value</code></dt>
+<dd><p>The raw value of the tag as a [list of] string(s).</p>
+</dd></dl>
+
+<span class="target" id="title2"></span><dl class="attribute">
+<dt>
+<code class="descname">title</code></dt>
+<dd><p>The title (label) of the tag.</p>
+</dd></dl>
+
+<span class="target" id="type2"></span><dl class="attribute">
+<dt>
+<code class="descname">type</code></dt>
+<dd><p>The XMP type of the tag.</p>
+</dd></dl>
+
+<span class="target" id="value2"></span><dl class="attribute">
+<dt>
+<code class="descname">value</code></dt>
+<dd><p>The value of the tag as a [list of] python object(s).</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyexiv2.xmp.XmpValueError">
+<em class="property">class </em><code class="descclassname">pyexiv2.xmp.</code><code class="descname">XmpValueError</code><span class="sig-paren">(</span><em>ValueError</em><span class="sig-paren">)</span><a class="headerlink" href="#pyexiv2.xmp.XmpValueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception raised when failing to parse the value of an XMP tag.</p>
+</dd></dl>
+
+<p><strong>Attributes</strong></p>
+<dl class="attribute">
+<dt>
+<code class="descname">value</code></dt>
+<dd><p>The value that fails to be parsed</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">type</code></dt>
+<dd><p>The XMP type of the tag</p>
+</dd></dl>
+
+</div>
+<div class="section" id="pyexiv2-preview">
+<h2>pyexiv2.preview<a class="headerlink" href="#pyexiv2-preview" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyexiv2.preview.Preview">
+<em class="property">class </em><code class="descclassname">pyexiv2.preview.</code><code class="descname">Preview</code><a class="headerlink" href="#pyexiv2.preview.Preview" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><strong>Instance Attributes</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#dimensions1"><span class="std std-ref">dimensions</span></a></li>
+<li><a class="reference internal" href="#extension1"><span class="std std-ref">extension</span></a></li>
+<li><a class="reference internal" href="#mime-type1"><span class="std std-ref">mime_type</span></a></li>
+<li><a class="reference internal" href="#size"><span class="std std-ref">size</span></a></li>
+<li><a class="reference internal" href="#data1"><span class="std std-ref">data</span></a></li>
+</ul>
+<p><strong>Instance Method</strong></p>
+<ul class="simple">
+<li><a class="reference internal" href="#write-to-file"><span class="std std-ref">write_to_file(path)</span></a></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>The <code class="xref py py-class docutils literal"><span class="pre">Preview</span></code> define a preview image (properties and data buffer) embedded in image metadata.</p>
+<p><strong>Documentation</strong></p>
+<p><strong>Instanciation</strong></p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">pyexiv2.preview.</code><code class="descname">Preview</code><span class="sig-paren">(</span><em>preview</em><span class="sig-paren">)</span></dt>
+<dd><p>A preview image embedded in image metadata.</p>
+</dd></dl>
+
+<p><strong>Attributes</strong></p>
+<span class="target" id="dimensions1"></span><dl class="attribute">
+<dt>
+<code class="descname">dimensions</code></dt>
+<dd><p>A tuple containing the width and height of the preview image in pixels.</p>
+</dd></dl>
+
+<span class="target" id="extension1"></span><dl class="attribute">
+<dt>
+<code class="descname">extension</code></dt>
+<dd><p>The file extension of the preview image with a leading dot (e.g. .jpg).</p>
+</dd></dl>
+
+<span class="target" id="mime-type1"></span><dl class="attribute">
+<dt>
+<code class="descname">mime_type</code></dt>
+<dd><p>The mime type of the preview image (e.g. image/jpeg).</p>
+</dd></dl>
+
+<span class="target" id="size"></span><dl class="attribute">
+<dt>
+<code class="descname">size</code></dt>
+<dd><p>The size of the preview image in bytes.</p>
+</dd></dl>
+
+<span class="target" id="data1"></span><dl class="attribute">
+<dt>
+<code class="descname">data</code></dt>
+<dd><p>The preview data as a Python list. The data can be send to an image library.</p>
+<p><em>New in version 0.6.0</em></p>
+<p>Example with Pillow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyexiv2</span> <span class="k">import</span> <span class="n">ImageMetadata</span><span class="p">,</span> <span class="n">exif</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span> <span class="o">=</span> <span class="n">ImageMetadata</span><span class="p">(</span><span class="s2">&quot;lena.jpg&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">meta</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># try with the first one</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">preview</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">previews</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">byteio</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">preview</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">byteio</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p><strong>Method</strong></p>
+<span class="target" id="write-to-file"></span><dl class="function">
+<dt>
+<code class="descname">write_to_file</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span></dt>
+<dd><p>Write the preview image to a file on disk. The file extension will be automatically appended to the path.</p>
+<p>Argument:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>path</em> str(path) The file path to write the preview to (without an extension)</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">API documentation</a><ul>
+<li><a class="reference internal" href="#pyexiv2">pyexiv2</a></li>
+<li><a class="reference internal" href="#pyexiv2-metadata">pyexiv2.metadata</a></li>
+<li><a class="reference internal" href="#pyexiv2-exif">pyexiv2.exif</a></li>
+<li><a class="reference internal" href="#pyexiv2-iptc">pyexiv2.iptc</a></li>
+<li><a class="reference internal" href="#pyexiv2-xmp">pyexiv2.xmp</a></li>
+<li><a class="reference internal" href="#pyexiv2-preview">pyexiv2.preview</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to py3exiv2’s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tutorial.html"
+                        title="next chapter">Tutorial</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="tutorial.html" title="Tutorial"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to py3exiv2’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">py3exiv2 0.3.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2018 Vincent Vande Vyvre.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

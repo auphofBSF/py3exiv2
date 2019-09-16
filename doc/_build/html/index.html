@@ -1,0 +1,165 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to py3exiv2’s documentation! &#8212; py3exiv2 0.3.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API documentation" href="api.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API documentation"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">py3exiv2 0.3.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-py3exiv2-s-documentation">
+<h1>Welcome to py3exiv2’s documentation!<a class="headerlink" href="#welcome-to-py3exiv2-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>py3exiv2 is a <a class="reference external" href="https://docs.python.org/3/">Python 3</a> binding to
+<a class="reference external" href="http://exiv2.org/">exiv2</a>, the C++ library
+for manipulation of <abbr title="EXchangeable Image File">EXIF</abbr>,
+<abbr title="International Press Telecommunications Council">IPTC</abbr> and
+<abbr title="eXtensible Metadata Platform">XMP</abbr> image metadata.
+It is a python 3 module that allows your scripts to read and write metadata (EXIF, IPTC, XMP, thumbnails) embedded in image files (JPEG, TIFF, …).</p>
+<p>It is designed as a high-level interface to the functionalities offered by
+libexiv2. Using python’s built-in data types and standard modules, it provides
+easy manipulation of image metadata.</p>
+<p>py3exiv2 is distributed under the
+<a class="reference external" href="http://www.gnu.org/licenses/gpl.html">GPL version 3</a>
+license.</p>
+<p>The main content of the code was initially written by Olivier Tilloy for
+Python 2 under the name <a class="reference external" href="http://tilloy.net/dev/pyexiv2/index.html">pyexiv2</a>.</p>
+<p><strong>Differences between py3exiv2 (Python 3) and pyexiv2 (Python 2)</strong></p>
+<p>The module’s name and the syntax are unchanged, your code written previously for Python 2 may run with py3exiv2, however there’s three thinks that you should be care.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The deprecated <code class="docutils literal"><span class="pre">IptcTag.raw_values</span></code> was removed in py3exiv2, use <code class="docutils literal"><span class="pre">IptcTag.raw_value</span></code> instead.</li>
+<li>The <code class="docutils literal"><span class="pre">pyexiv2.preview.Preview.data</span></code> is not implemented, use <code class="docutils literal"><span class="pre">pyexiv2.exif.ExifThumbnail.data</span></code> instead.</li>
+<li>All the string returned by any <code class="docutils literal"><span class="pre">Tag.value</span></code> are unicode, but you don’t need to convert yours strings in bytes to set a value for a tag which only accept ASCII characters, this is the job of py3exiv2.</li>
+</ul>
+</div></blockquote>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#pyexiv2">pyexiv2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#pyexiv2-metadata">pyexiv2.metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#pyexiv2-exif">pyexiv2.exif</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#pyexiv2-iptc">pyexiv2.iptc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#pyexiv2-xmp">pyexiv2.xmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#pyexiv2-preview">pyexiv2.preview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#reading-and-writing-exif-tags">Reading and writing EXIF tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#reading-and-writing-iptc-tags">Reading and writing IPTC tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#reading-and-writing-xmp-tags">Reading and writing XMP tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#accessing-embedded-previews">Accessing embedded previews</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developers.html">Developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developers.html#getting-the-code">Getting the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developers.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developers.html#building-and-installing">Building and installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developers.html#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developers.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developers.html#contributing">Contributing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to py3exiv2’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">API documentation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API documentation"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">py3exiv2 0.3.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2015-2018 Vincent Vande Vyvre.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>
