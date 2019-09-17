@@ -1,2 +1,6 @@
-build\*
-dist\*
+build/
+dist/
+.vscode
+
+*.pyc
+*.pyd
