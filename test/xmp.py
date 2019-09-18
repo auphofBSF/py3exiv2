@@ -83,6 +83,16 @@ class TestXmpTag(unittest.TestCase):
                          datetime.date(1999, 10, 1))
         self.assertEqual(tag._convert_to_python('1999-10-13', 'Date'),
                          datetime.date(1999, 10, 13))
+        self.assertEqual(tag._convert_to_python('1999-10-13T05:03:24.888', 'Date') - \
+                         datetime.datetime(1999, 10, 13, 5, 3,24,int(0.888*10**6)),
+                         datetime.timedelta(0))
+        self.assertEqual(tag._convert_to_python('1999-10-13T05:03:24.888Z', 'Date') - \
+                         datetime.datetime(1999, 10, 13, 5, 3,24,int(0.888*10**6),
+                         tzinfo=FixedOffset()),
+                         datetime.timedelta(0))
+        self.assertEqual(tag._convert_to_python('1999-10-13T05:03', 'Date') - \
+                         datetime.datetime(1999, 10, 13, 5, 3),
+                         datetime.timedelta(0))
         self.assertEqual(tag._convert_to_python('1999-10-13T05:03Z', 'Date') - \
                          datetime.datetime(1999, 10, 13, 5, 3, tzinfo=FixedOffset()),
                          datetime.timedelta(0))
