@@ -1,4 +1,4 @@
-README
+README.md
 setup.py
 src/exiv2wrapper.cpp
 src/exiv2wrapper_python.cpp

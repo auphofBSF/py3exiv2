@@ -1,4 +1,4 @@
-py3exiv2
+# py3exiv2
 *******
 
 Welcome to py3exiv2, a python 3 binding to exiv2 (http://exiv2.org/), the C++
@@ -35,6 +35,8 @@ This is a typical list of build dependencies for a Debian/Ubuntu system:
 Building and installing
 =======================
 
+## Linux
+
 To build and install the library, while in the top-level directory
 (e.g. '~/dev/p3yexiv2', which should contain a file named 'configure.py'),
 run the following commands:
@@ -58,6 +60,33 @@ To use py3exiv2 in your scripts, simply import the pyexiv2 module.
 
 Note: the lib name is py3exiv2 but, for compatibility, the top-level module 
       is named pyexiv2
+
+
+## Windows 10
+
+The installation is more complex but following guidelines by
+https://www.developpez.net/forums/u263817/vinss/ 
+as discussed in https://www.developpez.net/forums/d1971475/autres-langages/python-zope/deploiement-installation/py3exiv2-installation-sous-windows/ there is now a windows .bat file.
+
+### INSTALLING PYEXIV3 ON WINDOWS for a particular version of Python
+- install GIT-2.21.0-64-bit.exe
+- install VSCodeUserSetup-x64-1.33.1.exe
+- configure vcpkg ports of python3 for the correct python major.minor.patch version by editing the `vcpkg_custom\ports\python3` files CONTROL and portfile.cmake.
+- change directory to `cd windows-vcpkg` 
+- edit vcpkgSetup.bat to define the install point for **vcpkg** then execute the automated setup `vcpkgSetup.bat`
+
+the proceed to install with pip
+- set path to find the vcpkg built dependincies
+  `set PATH=%VCPKG%\install\x64-windows\bin;%PATH%`
+  
+- Now Install py3exiv2 `pip install -e <dir of py3exiv2\setup.py>`
+
+
+For future execution of python code using py3exiv2  add the dependency paths for the boost 
+```
+set VCPKG=<<your installed path for vcpkg>>
+set PATH=%VCPKG%\installed\x64-windows\bin;%PATH%
+```
 
 
 Documentation
