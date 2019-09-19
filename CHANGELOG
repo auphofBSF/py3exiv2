@@ -1,5 +1,9 @@
 PYTHON3-EXIV2
 
+Change in 0.7.2RCwinX64  Thu, 19 Sept 2019  -   GITHUB fork of https://launchpad.net/py3exiv2
+ * Minor changes in order to compile on Windows, (Not tested on Linux)
+ * Update the xmp Date type parser to support no TZ and validate DateTime with fractions of seconds
+
 Change in 0.7.1  Sat, 28 May 2019
  * Minor changes in order to compile on OS X platform
 

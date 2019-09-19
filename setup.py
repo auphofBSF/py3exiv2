@@ -61,7 +61,7 @@ else:
 
 setup(
     name='py3exiv2',
-    version='0.7.1',
+    version='0.7.2RCwinX64',
     description='A Python3 binding to the library exiv2',
     long_description=long_description,
     url='https://launchpad.net/py3exiv2',

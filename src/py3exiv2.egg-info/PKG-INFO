@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: py3exiv2
-Version: 0.7.1
+Version: 0.7.2RCwinX64
 Summary: A Python3 binding to the library exiv2
 Home-page: https://launchpad.net/py3exiv2
 Author: Vincent Vande Vyvre
@@ -25,12 +25,17 @@ Description: python3-exiv2
          * boost.python3 (http://www.boost.org/libs/python/doc/index.html)
          * exiv2 (http://www.exiv2.org/)
         
-        Build depends:
+        Build depends (linux):
         
          * python-all-dev (≥ 3.2)
          * libexiv2-dev (≥ 0.20)
          * libboost-python-dev (≥ 1.48)
          * g++
+        
+        Build depends (windows x64): SEE script in windows-vcpkg\vcpkgSetup.bat
+         vcpkg install python3:x64-window (configure for relevant python vesion)
+         vcpkg install boost-python:x64-windows
+         vcpkg install exiv2:x64-windows
         
 Keywords: exiv2 pyexiv2 EXIF IPTC XMP image metadata
 Platform: UNKNOWN
