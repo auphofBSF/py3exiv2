@@ -84,10 +84,10 @@ class XmpTag(object):
 
     # strptime is not flexible enough to handle all valid Date formats, we use a
     # custom regular expression
-    _time_zone_re = r'Z|((?P<sign>\+|-)(?P<ohours>\d{2}):(?P<ominutes>\d{2}))'
-    _time_re = r'(?P<hours>\d{2})(:(?P<minutes>\d{2})(:(?P<seconds>\d{2})(.(?P<decimal>\d+))?)?(?P<tzd>%s))?' % _time_zone_re
-    _date_re = re.compile(r'(?P<year>\d{4})(-(?P<month>\d{2})(-(?P<day>\d{2})(T(?P<time>%s))?)?)?' % _time_re)
-
+    _time_zone_regex = r'((?P<tzd>Z)?((?P<sign>[\+|\-])(?P<ohours>\d{2}):(?P<ominutes>\d{2}))'
+    _time_regex = r'(T(?P<time>(?P<hours>\d{{2}})(:(?P<minutes>\d{{2}})((:(?P<seconds>\d{{2}}))?((\.(?P<decimal>\d+))?{tz}?)?)?)?)?))'
+    _date_regex = r"((?P<year>\d{{4}})(-(?P<month>\d{{2}})(-(?P<day>\d{{2}}))?)?{time}?)"
+    _date_re = re.compile(_date_regex.format(time= _time_regex.format(tz=_time_zone_regex)))
     def __init__(self, key, value=None, _tag=None):
         """The tag can be initialized with an optional value which expected
         type depends on the XMP type of the tag.
@@ -339,17 +339,37 @@ class XmpTag(object):
                 else:
                     microseconds = 0
 
-                if gd['tzd'] == 'Z':
+                if gd['tzd'] is not None and gd['tzd'] == 'Z' and gd['sign'] is  None and gd['ohours'] is  None and gd['ominutes'] is  None:
                     tzinfo = FixedOffset()
 
-                else:
+                elif gd['sign'] is not None and gd['ohours'] is not None and gd['ominutes'] is not None:
                     tzinfo = FixedOffset(gd['sign'], int(gd['ohours']),
                                          int(gd['ominutes']))
+                else:
+                    tzinfo = None
+                    # TODO: Decide if following is way to hande
+                            # ======================================================================
+                            # ERROR: test_convert_to_python_date (xmp.TestXmpTag)
+                            # ----------------------------------------------------------------------
+                            # Traceback (most recent call last):
+                            #   File "c:\Users\BSFau\Cloudstation\BSFsoftDev\axternal\py3exiv2\py3exiv2\test\xmp.py", line 91, in test_convert_to_python_date
+                            #     datetime.datetime(1999, 10, 13, 5, 3, tzinfo=FixedOffset()),
+                            # TypeError: can't subtract offset-naive and offset-aware datetimes
+                            # ----------------------------------------------------------------------
 
+                    # u_tm = datetime.datetime.utcfromtimestamp(0)
+                    # l_tm = datetime.datetime.fromtimestamp(0)
+                    # tzinfo = datetime.timezone(l_tm - u_tm)
                 try:
-                    return datetime.datetime(int(gd['year']), month, day,
+                    if tzinfo is not None:
+                        return datetime.datetime(int(gd['year']), month, day,
                                              int(gd['hours']), int(gd['minutes']),
-                                             seconds, microseconds, tzinfo)
+                                             seconds, microseconds, tzinfo )
+                    else:
+                        return datetime.datetime(int(gd['year']), month, day,
+                                             int(gd['hours']), int(gd['minutes']),
+                                             seconds, microseconds )
+
                 except ValueError:
                     raise XmpValueError(value, type_)
 

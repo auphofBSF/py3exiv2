@@ -75,7 +75,7 @@ def _make_version(version_info):
 
 
 #: A tuple containing the three components of the version number: major, minor, micro.
-version_info = (0, 7, 1)
+version_info = (0, 7, '2RCwinX86')
 
 #: The version of the module as a string (major.minor.micro).
 __version__ = _make_version(version_info)

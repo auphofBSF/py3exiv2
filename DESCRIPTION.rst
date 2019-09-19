@@ -17,9 +17,14 @@ py3exiv2 depends on the following libraries:
  * boost.python3 (http://www.boost.org/libs/python/doc/index.html)
  * exiv2 (http://www.exiv2.org/)
 
-Build depends:
+Build depends (linux):
 
  * python-all-dev (≥ 3.2)
  * libexiv2-dev (≥ 0.20)
  * libboost-python-dev (≥ 1.48)
  * g++
+
+Build depends (windows x64): SEE script in windows-vcpkg\vcpkgSetup.bat
+ vcpkg install python3:x64-window (configure for relevant python vesion)
+ vcpkg install boost-python:x64-windows
+ vcpkg install exiv2:x64-windows
