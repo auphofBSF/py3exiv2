@@ -10,8 +10,12 @@ metadata (EXIF, IPTC, XMP, thumbnails) embedded in image files
 Point your browser to http://exiv2.org/metadata.html for the complete metadata
 tag reference.
 
+This fork supporting  Windows is based on the suggestions by in a post by the author, Vincent Vande Vyvre
+https://www.developpez.net/forums/d1971475/autres-langages/python/deploiement-installation/py3exiv2-installation-sous-windows/#post10935110
+and the GithubGist  [py3exiv2 patched setup.py file for installation on Windows using vcpkg ](https://gist.github.com/ksdme/190f91b33ca1138b0ff85ab662c02e6a) by https://github.com/ksdme
 
-Build dependencies
+TODO: further improve the setup to automatically build/install boost on windows
+
 ==================
 
 py3exiv2 depends on the following libraries:

@@ -1,5 +1,13 @@
 #! / Usr / bin / python3
 # - * - coding: utf-8 - * -
+# Replacement setup.py for py3exiv2, that allows building on windows using VCPKG see Readme
+# THis py3exiv2 implementation of pyexiv2 is Forked from rev105 : https://bazaar.launchpad.net/~vincent-vandevyvre/py3exiv2/trunk/files/105
+# based on the suggestions by in a post by the author, Vincent Vande Vyvre
+# https://www.developpez.net/forums/d1971475/autres-langages/python/deploiement-installation/py3exiv2-installation-sous-windows/#post10935110
+# and the GithubGist  [py3exiv2 patched setup.py file for installation on Windows using vcpkg ](https://gist.github.com/ksdme/190f91b33ca1138b0ff85ab662c02e6a) by https://github.com/ksdme
+# 
+# TODO: further improve the setup to automatically build/install boost on windows
+
 
 import sys
 import os
